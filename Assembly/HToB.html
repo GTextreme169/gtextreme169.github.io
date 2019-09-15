@@ -16,7 +16,7 @@
 			var num = Math.floor(Math.random() * 16*16).toString(16);
 			$("#Hex").html("Number in Hex: " + num);
 			function doSomething() {
-				if(parseInt($('#Num1').val(),2) == parseInt(parseInt(num,16).toString(2),2)){
+				if(parseInt($('#Num1').val(),2) == parseInt(num,16)){
 					alert ("Correct");
 				}else{
 					alert ("Incorrect. The Correct Answer is: " + parseInt(num,16).toString(2));
