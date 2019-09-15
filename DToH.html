@@ -1,0 +1,21 @@
+<html>
+<h1 id="Decimal" >Decimal: </h1>
+<form onsubmit="return doSomething();" class="my-form">
+	Your Guess in Hex:<input type="text" name="Num1" id="Num1">
+    <input type="submit" value="Submit">
+</form>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+<script>
+var num = Math.floor(Math.random() * 1000);
+$("#Decimal").html("Decimal: " + num);
+function doSomething() {
+	if($('#Num1').val() == num.toString(16)){
+		alert ("Correct");
+	}else{
+		alert ("Incorrect. The Correct Answer is: " +num.toString(16));
+    }
+	return false;
+}
+</script>
+</html>
