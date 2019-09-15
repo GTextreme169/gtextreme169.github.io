@@ -1,25 +1,25 @@
 <html>
 	<head>
-		<title>Decimal To Hex</title>
+		<title>Hex To Decimal</title>
 	</head>
 	<body>
 		<a href="index.html">Go Back</a>
 		<button onClick="window.location.reload();">New Question</button>
-		<h1 id="Decimal" >Number in Decimal: </h1>
+		<h1 id="Hex" >Number in Hex: </h1>
 		<form onsubmit="return doSomething();" class="my-form">
-			Your Guess in Hex: <input type="text" name="Num1" id="Num1">
+			Your Guess in Decimal: <input type="text" name="Num1" id="Num1">
 			<input type="submit" value="Submit">
 		</form>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 
 		<script>
-			var num = Math.floor(Math.random() * 1000);
-			$("#Decimal").html("Number in Decimal: " + num);
+			var num = Math.floor(Math.random() * 1000).toString(16);
+			$("#Hex").html("Number in Hex: " + num);
 			function doSomething() {
-				if($('#Num1').val() == num.toString(16)){
+				if($('#Num1').val() == parseInt(num,16)){
 					alert ("Correct");
 				}else{
-					alert ("Incorrect. The Correct Answer is: " +num.toString(16));
+					alert ("Incorrect. The Correct Answer is: " + parseInt(num,16));
 				}
 				return false;
 			}
