@@ -16,7 +16,7 @@
 			var num = Math.floor(Math.random() *16*16);
 			$("#Decimal").html("Number in Decimal: " + num);
 			function doSomething() {
-				if($('#Num1').val() == num.toString(16)){
+				if(parseInt($('#Num1').val(),16) == num){
 					alert ("Correct");
 				}else{
 					alert ("Incorrect. The Correct Answer is: " +num.toString(16));
