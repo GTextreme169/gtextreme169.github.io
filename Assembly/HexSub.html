@@ -1,0 +1,51 @@
+<html>
+	<head>
+		<title>Hex Subtraction</title>
+	</head>
+	<body>
+		<a href="index.html">Go Back</a>
+		<button onClick="window.location.reload();">New Question</button>
+		<h1 id="Hex1" >First Number in Hex: </h1>
+		<h1 id="Hex2" >Second Number in Hex: </h1>
+		<form onsubmit="return doSomething();" class="my-form">
+			Your Guess in Hex: <input type="text" name="Num1" id="Num1">
+			<input type="submit" value="Submit">
+		</form>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+		<script>
+			var num1 = Math.floor(Math.random() * 16*16).toString(16);
+			while(num1.toString(16).length != 2)
+				num1 = Math.floor(Math.random() * 16*16).toString(16);
+			var num2 = Math.floor(Math.random() * 16*16).toString(16);
+			while(num2.toString(16).length != 2)
+				num2 = Math.floor(Math.random() * 16*16).toString(16);
+			$("#Hex1").html("First Number in Hex: " + num1);
+			$("#Hex2").html("Second Number in Hex: " + num2);
+			var sum = parseInt(num1,16) - parseInt(num2, 16);
+			var cflag = (sum.toString(16).charAt(0) == '1');
+			if (cflag) sum -= parseInt(100,16);
+			var oflag = (Signed(num1) && Signed(num2) && !Signed(sum))
+					|| (!Signed(num1) && !Signed(num2) && Signed(sum));
+			var zflag = sum == 0;
+			var sflag = (parseInt(sum.toString(16).charAt(0),16) > 7);
+			function doSomething() {
+				if(parseInt($('#Num1').val(),16) == sum && cflag == $('#CF').val() && oflag == $('#OF').val() && zflag == $('#ZF').val() && sflag == $('#SF').val()){
+					alert ("Correct");
+				}else{
+					alert ("Incorrect. The Correct Answer is: " + sum.toString(16) + (cflag ? " CF:1" : " CF:0" ) + (oflag ? " OF:1" : " OF:0" ) + (zflag ? " ZF:1" : " ZF:0" ) + (sflag ? " SF:1" : " SF:0" ));
+				}
+				return false;
+			}
+			
+			function Signed(number)
+			{
+				if(number.toString(16).length == 2)
+					return (parseInt(number.toString(16).charAt(0),16) > 7);
+				else{
+					return false;
+				}
+			}
+		</script>
+	</body>
+</html>
