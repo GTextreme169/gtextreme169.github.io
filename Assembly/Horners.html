@@ -1,0 +1,17 @@
+<html>
+	<head>
+		<title>How To Convert To Horners</title>
+	</head>
+	<body style="text-align:center">
+		<a href="index.html">Go Back</a>
+		<h1>Horners Form</h1>
+		<p>Purpose: to minimize the amount to mul calls in a program.</p>
+		<table style="text-align:center; margin:auto;" border=1>
+			<tr><th colspan="4">Examples</th></tr>
+			<tr><th>Before</th><th>Total Mul calls</th><th>After</th><th>Total Mul calls</th></tr>
+			<tr><td>5x^3 + 4x^2 + 3x + 2</td><td>6</td><td>((5x + 4)x + 3)x + 2</td><td>3</td></tr>
+			<tr><td>6x^4 + 3x^2 + 8x + 1</td><td>7</td><td>((6x^2 + 3)x + 8)x + 1</td><td>4</td></tr>
+			<tr><td>6x^4 + 2x^3 + 3x^2 + 8x + 1</td><td>10</td><td>((6x + 2)x + 3)x + 8)x + 1</td><td>4</td></tr>
+		</table>
+	</body>
+</html>
