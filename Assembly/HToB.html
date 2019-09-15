@@ -13,7 +13,7 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 
 		<script>
-			var num = Math.floor(Math.random() * 16*2).toString(16);
+			var num = Math.floor(Math.random() * 16*16).toString(16);
 			$("#Hex").html("Number in Hex: " + num);
 			function doSomething() {
 				if(parseInt($('#Num1').val(),2) == parseInt(parseInt(num,16).toString(2),2)){
