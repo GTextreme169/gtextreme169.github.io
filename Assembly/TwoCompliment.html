@@ -1,0 +1,29 @@
+<html>
+	<head>
+		<title>Hex Two's Compliment</title>
+	</head>
+	<body>
+		<a href="index.html">Go Back</a>
+		<button onClick="window.location.reload();">New Question</button>
+		<h1 id="Hex" >Number in Hex: </h1>
+		<form onsubmit="return doSomething();" class="my-form">
+			Your Guess in Hex: <input type="text" name="Num1" id="Num1">
+			<input type="submit" value="Submit">
+		</form>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+		<script>
+			var num = Math.floor(Math.random() * 16*16).toString(16);
+			$("#Hex").html("Number in Hex: " + num);
+			var sum = parseInt("FF",16)-parseInt(num,16)+1;
+			function doSomething() {
+				if(parseInt($('#Num1').val(),16) == sum){
+					alert ("Correct");
+				}else{
+					alert ("Incorrect. The Correct Answer is: " + sum.toString(16));
+				}
+				return false;
+			}
+		</script>
+	</body>
+</html>
