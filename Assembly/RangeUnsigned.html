@@ -1,0 +1,29 @@
+<html>
+	<head>
+		<title>Range Of Unsigned Number</title>
+	</head>
+	<body>
+		<a href="index.html">Go Back</a>
+		<button onClick="window.location.reload();">New Question</button>
+		<h1 id="Decimal" >Number in Decimal: </h1>
+		<form onsubmit="return doSomething();" class="my-form">
+			Your Guess in Decimal Min: <input type="text" name="Num1" id="Num1">
+			Your Guess in Decimal Max: <input type="text" name="Num2" id="Num2">
+			<input type="submit" value="Submit">
+		</form>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+		<script>
+			var num = Math.floor(Math.random() * 7)+1;
+			$("#Decimal").html("Number in Decimal: " + num);
+			function doSomething() {
+				if(($('#Num1').val() == 0) && ($('#Num2').val() == (Math.pow(2,num)-1))){
+					alert ("Correct");
+				}else{
+					alert ("Incorrect. The Correct Answer is: " +  0 + " to " + (Math.pow(2,num)-1));
+				}
+				return false;
+			}
+		</script>
+	</body>
+</html>
