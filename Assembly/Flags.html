@@ -1,0 +1,39 @@
+<html>
+	<head>
+		<title>List of Instructions</title>
+	</head>
+	<body style="text-align:center">
+		<a href="index.html">Go Back</a>
+		<h1>Exam 1:</h1>
+		<table style="text-align:center; margin:auto;" border=1>
+			<tr><th colspan="2">Carry flag</th></tr>
+			<tr><th>Case</th><th>Description</th></tr>
+			<tr><td>1 + F = 0</td><td><p>Carry Flag=1. Value carried to digit left of the buffer.</p></td></tr>
+			<tr><td>0 - 1 = F</td><td><p>Carry Flag=1. Value carried to digit right of the buffer.</p></td></tr>
+		</table>
+		<br />
+		<table style="text-align:center; margin:auto;" border=1>
+			<tr><th colspan="2">Signed flag</th></tr>
+			<tr><th>Case</th><th>Description</th></tr>
+			<tr><td>F = 1111</td><td><p>Signed Flag=1. Left most bit is one</p></td></tr>
+			<tr><td>a = 1010</td><td><p>Signed Flag=1. Left most bit is one</p></td></tr>
+			<tr><td>8 = 1000</td><td><p>Signed Flag=1. Left most bit is one</p></td></tr>
+			<tr><td>7 = 0111</td><td><p>Signed Flag=0. Left most bit is zero</p></td></tr>
+			<tr><td>3 = 0011</td><td><p>Signed Flag=0. Left most bit is zero</p></td></tr>
+		</table>
+		<br />
+		<table style="text-align:center; margin:auto;" border=1>
+			<tr><th colspan="2">Overflow flag</th></tr>
+			<tr><th>Case</th><th>Description</th></tr>
+			<tr><td>A + A = 4</td><td><p>Overflow Flag=1. Two signed values added gave a unsiged value.</p></td></tr>
+			<tr><td>7 + 3 = a</td><td><p>Overflow Flag=1. Two unsigned values added gave a signed value.</p></td></tr>
+		</table>
+		<br />
+		<table style="text-align:center; margin:auto;" border=1>
+			<tr><th colspan="2">Zero flag</th></tr>
+			<tr><th>Case</th><th>Description</th></tr>
+			<tr><td>1 - 1 = 0</td><td><p>Zero Flag=1. Total equals 0.</p></td></tr>
+			<tr><td>a + -a = 0</td><td><p>Zero Flag=1. Total equals 0.</p></td></tr>
+		</table>
+	</body>
+</html>
