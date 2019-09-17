@@ -1,0 +1,26 @@
+@media (max-width: 576px) { 
+	.add {
+		margin-top: 1em;
+	}
+}
+.card {
+	margin-bottom: 1em;
+}
+
+.v-auto {
+	margin-top: auto;
+	margin-bottom: auto;
+}
+
+.set14 th:nth-child(1){
+	-ms-flex:0 0 8.333333%;flex:0 0 8.333333%;max-width:8.333333%;
+}
+.set14 th:nth-child(2){
+	-ms-flex:0 0 25%;flex:0 0 25%;max-width:25%;
+	}
+.set14 td:nth-child(1){
+	-ms-flex:0 0 8.333333%;flex:0 0 8.333333%;max-width:8.333333%;
+}
+.set14 td:nth-child(2){
+	-ms-flex:0 0 25%;flex:0 0 25%;max-width:25%;
+}
