@@ -1,24 +1,43 @@
 <html>
 	<head>
-		<title>List of Instructions</title>
+		<title>List of Registers</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="https://gtextreme169.github.io/CSS/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="https://gtextreme169.github.io/CSS/styles.css" />
 	</head>
 	<body style="text-align:center">
-		<a href="index.html">Go Back</a>
-		<h1>Exam 1:</h1>
-		<table style="text-align:center; margin:auto;" border=1>
-			<tr><th colspan="4">Format of 32 bit Register</th></tr>
-			<tr><th>8 bit</th><th>8 bit</th><th>8 bit</th><th>8 bit</th></tr>
-			<tr><th colspan="4">EAX 32 bit</th></tr>
-			<tr><th colspan="2"></th><th colspan="2">AX 16 bit</th></tr>
-			<tr><th colspan="2"></th><th>AL</th><th>AH</th></tr>
-		</table>
-		<br />
-		<table style="text-align:center; margin:auto;" border=1>
-			<tr><td>Register</td><td>Description</td></tr>
-			<tr><td>EAX</td><td>Accumulator register</td></tr>
-			<tr><td>EBX</td><td>Base register</td></tr>
-			<tr><td>ECX</td><td>Counter register</td></tr>
-			<tr><td>EDX</td><td>Data register</td></tr>
-		</table>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-sm-2 v-auto">
+					<a href="index.html" class="btn btn-warning btn-block add">Go Back</a>
+				</div>	
+				<div class="col-md-8">
+					<h1>List Of Registers</h1>
+				</div>
+			</div>
+			<div class="row justify-content-center">
+				<div class="col-sm-6">
+					<table class="table table-hover"  style="text-align:center; margin:auto;" border=1>
+						<thead class="thead-dark"><tr><th colspan="4">Format of 32 bit Register</th></tr></thead>
+						<tbody class="set22">
+							<tr><th>8 bit</th><th>8 bit</th><th>8 bit</th><th>8 bit</th></tr>
+							<tr><th colspan="4">EAX 32 bit</th></tr>
+							<tr><th colspan="2"></th><th colspan="2">AX 16 bit</th></tr>
+							<tr><th colspan="2"></th><th>AL</th><th>AH</th></tr>
+						</tbody>
+					</table>
+					<br />
+					<table class="table table-hover"  style="text-align:center; margin:auto;" border=1>
+						<tbody class="set14">
+							<tr><td>Register</td><td>Description</td></tr>				
+							<tr><td>EAX</td><td>Accumulator register</td></tr>
+							<tr><td>EBX</td><td>Base register</td></tr>
+							<tr><td>ECX</td><td>Counter register</td></tr>
+							<tr><td>EDX</td><td>Data register</td></tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
 	</body>
 </html>

@@ -19,7 +19,7 @@
 }
 .set14 th:nth-child(2){
 	-ms-flex:0 0 66.666666%;flex:0 0 66.666666%;max-width:66.666666%;
-	}
+}
 .set14 td:nth-child(1){
 	-ms-flex:0 0 33.333333%;flex:0 0 33.333333%;max-width:33.333333%;
 }
@@ -28,4 +28,11 @@
 }
 .set14 tr{
 	display:-ms-flexbox!important;display:flex!important;
+}
+.set22 tr{
+	display:-ms-flexbox!important;display:flex!important;
+}
+.set22 th, td {
+	position:relative;width:100%;padding-right:15px;padding-left:15px;
+	-ms-flex:0 0 25%;flex:0 0 25%;max-width:25%;
 }
