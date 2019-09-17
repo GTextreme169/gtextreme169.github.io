@@ -24,3 +24,6 @@
 .set14 td:nth-child(2){
 	-ms-flex:0 0 25%;flex:0 0 25%;max-width:25%;
 }
+.set14 tr{
+	display:-ms-flexbox!important;display:flex!important;
+}
