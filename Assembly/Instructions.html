@@ -1,76 +1,214 @@
 <html>
 	<head>
 		<title>List of Instructions</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		<style>
+		@media (max-width: 576px) { 
+			.add {
+				margin-top: 1em;
+			}
+		}
+		.card {
+			margin-bottom: 1em;
+		}
+		.v-auto {
+			margin-top: auto;
+			margin-bottom: auto;
+		}
+		</style>
 	</head>
 	<body style="text-align:center">
-		<a href="index.html">Go Back</a>
-		<h1>Exam 1:</h1>
-		<table style="text-align:center; margin:auto;">
-			<tr><th colspan="2">"mov" Examples: Moves location of a value</th></tr>
-			<tr><th>Instruction</th><th>Description</th></tr>
-			<tr><td><pre style="background-color:#D3D3D3; text-align:left;">mov eax, ebx</pre></td><td><p>Assigns the value in ebx, to eax</p></td></tr>
-			<tr><td><pre style="background-color:#D3D3D3; text-align:left;">mov eax, 5</pre></td><td><p>Assigns the value 5, to eax</p></td></tr>
-		</table>
-		<br />
-		<table style="text-align:center; margin:auto;">
-			<tr><th colspan="2">"add" Examples: Adds a number to another</th></tr>
-			<tr><th>Instruction</th><th>Description</th></tr>
-			<tr><td><pre style="background-color:#D3D3D3; text-align:left;">add eax, ebx</pre></td><td><p>Adds the value in ebx, to eax, then assigns the result to eax</p></td></tr>
-			<tr><td><pre style="background-color:#D3D3D3; text-align:left;">add ebx, 5</pre></td><td><p>Adds the value 5, to ebx, then assigns the result to ebx</p></td></tr>
-		</table>
-		<br />
-		<table style="text-align:center; margin:auto;">
-			<tr><th colspan="2">"sub" Examples: Subtracts a number from another</th></tr>
-			<tr><th>Instruction</th><th>Description</th></tr>
-			<tr><td><pre style="background-color:#D3D3D3; text-align:left;">sub eax, ebx</pre></td><td><p>Subtracts the value in ebx, from eax, then assigns the result to eax</p></td></tr>
-			<tr><td><pre style="background-color:#D3D3D3; text-align:left;">sub ebx, 5</pre></td><td><p>Subtracts the value 5, from ebx, then assigns the result to ebx</p></td></tr>
-		</table>
-		<br />
-		<table style="text-align:center; margin:auto;">
-			<tr><th colspan="2">"mul" Examples: Multiplies two Unsigned numbers</th></tr>
-			<tr><th>Instruction</th><th>Description</th></tr>
-			<tr><td>
-			<pre style="background-color:#D3D3D3; text-align:left;">mov eax, 5
-mul 3</pre>
-			</td><td><p>Moves 5 into eax. Multiplies what is in eax by 3. Result is 15 in eax.</p></td></tr>
-			<tr><td><pre style="background-color:#D3D3D3; text-align:left;">mul eax</pre></td><td><p>Squares eax and assigns the result into eax.</p></td></tr>
-		</table>
-		<br />
-		<table style="text-align:center; margin:auto;">
-			<tr><th colspan="2">"imul" Examples: Multiplies two Signed numbers</th></tr>
-			<tr><th>Instruction</th><th>Description</th></tr>
-			<tr><td>
-			<pre style="background-color:#D3D3D3; text-align:left;">mov eax, 5
-imul -3</pre>
-			</td><td><p>Moves 5 into eax. Multiplies what is in eax by -3. Result is -15 in eax.</p></td></tr>
-			<tr><td><pre style="background-color:#D3D3D3; text-align:left;">imul eax</pre></td><td><p>Squares eax and assigns the result into eax.</p></td></tr>
-			<tr><td><pre style="background-color:#D3D3D3; text-align:left;">imul 5</pre></td><td><p>Multiplies eax by 5 and assigns the result into eax.</p></td></tr>
-			<tr><td><pre style="background-color:#D3D3D3; text-align:left;">imul ebx, 5</pre></td><td><p>Multiplies ebx by 5 and assigns the result into ebx.</p></td></tr>
-			<tr><td><pre style="background-color:#D3D3D3; text-align:left;">imul eax, ebx, 5</pre></td><td><p>Multiplies ebx by 5 and assigns the result into eax.</p></td></tr>
-		</table>
-		<br />
-		<table style="text-align:center; margin:auto;">
-			<tr><th colspan="2">"neg" Examples: Takes Two's Compliment of a number (Maintains flags)</th></tr>
-			<tr><th>Instruction</th><th>Description</th></tr>
-			<tr><td>
-			<pre style="background-color:#D3D3D3; text-align:left;">neg eax</pre>
-			</td><td><p>Replaces eax, with eax's two's compliment</p></td></tr>
-		</table>
-		<br />
-		<table style="text-align:center; margin:auto;">
-			<tr><th colspan="2">"inc" Examples: Adds one to destination</th></tr>
-			<tr><th>Instruction</th><th>Description</th></tr>
-			<tr><td>
-			<pre style="background-color:#D3D3D3; text-align:left;">inc eax</pre>
-			</td><td><p>Adds 1 to eax, and assigns the result to eax</p></td></tr>
-		</table>
-		<br />
-		<table style="text-align:center; margin:auto;">
-			<tr><th colspan="2">"dec" Examples: Subtracts one to destination</th></tr>
-			<tr><th>Instruction</th><th>Description</th></tr>
-			<tr><td>
-			<pre style="background-color:#D3D3D3; text-align:left;">dec eax</pre>
-			</td><td><p>Subtracts 1 from eax, and assigns the result to eax</p></td></tr>
-		</table>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-sm-2 v-auto">
+					<a href="../" class="btn btn-warning btn-block add">Go Back</a>
+				</div>	
+				<div class="col-md-8">
+					<h1>List of Instructions</h1>
+				</div>
+			</div>
+			<div class="row justify-content-center">
+				<div class="col-sm-6">
+					<table class="table table-hover" style="text-align:center; margin:auto;">
+						<thead class="thead-dark">
+							<tr>
+								<th colspan="2">"mov" Examples: Moves location of a value</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr class="d-flex">
+								<th class="col-4">Instruction</th>
+								<th class="col-8">Description</th>
+							</tr>
+							<tr class="d-flex">
+								<td class="table-secondary text-left col-4"><pre>mov eax, ebx</pre></td>
+								<td class="col-8"><p>Assigns the value in ebx, to eax</p></td>
+							</tr>
+							<tr class="d-flex">
+								<td class="table-secondary text-left col-4"><pre>mov eax, 5</pre></td>
+								<td class="col-8"><p>Assigns the value 5, to eax</p></td>
+							</tr>
+						</tbody>
+					</table>
+					<br />
+					<table class="table table-hover" style="text-align:center; margin:auto;">
+						<thead class="thead-dark">
+							<tr>
+								<th colspan="2">"add" Examples: Adds a number to another</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr class="d-flex">
+								<th class="col-4">Instruction</th>
+								<th class="col-8">Description</th>
+							</tr>
+							<tr class="d-flex">
+								<td class="table-secondary text-left col-4"><pre>add eax, ebx</pre></td>
+								<td class="col-8"><p>Adds the value in ebx, to eax, then assigns the result to eax</p></td>
+							</tr>
+							<tr class="d-flex">
+								<td class="table-secondary text-left col-4"><pre>add ebx, 5</pre></td>
+								<td class="col-8"><p>Adds the value 5, to ebx, then assigns the result to ebx</p></td>
+							</tr>
+					
+						</tbody>
+					</table>
+					<br />
+					<table class="table table-hover" style="text-align:center; margin:auto;">
+						<thead class="thead-dark">
+							<tr>
+								<th colspan="2">"sub" Examples: Subtracts a number from another</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr class="d-flex">
+								<th class="col-4">Instruction</th>
+								<th class="col-8">Description</th>
+							</tr>
+							<tr class="d-flex">
+								<td class="table-secondary text-left col-4"><pre>sub eax, ebx</pre></td>
+								<td class="col-8"><p>Subtracts the value in ebx, from eax, then assigns the result to eax</p></td>
+							</tr>
+							<tr class="d-flex">
+								<td class="table-secondary text-left col-4"><pre>sub ebx, 5</pre></td>
+								<td class="col-8"><p>Subtracts the value 5, from ebx, then assigns the result to ebx</p></td>
+							</tr>
+						</tbody>
+					</table>
+					<br />
+					<table class="table table-hover" style="text-align:center; margin:auto;">
+						<thead class="thead-dark">
+							<tr>
+								<th colspan="2">"mul" Examples: Multiplies two Unsigned numbers</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr class="d-flex">
+								<th class="col-4">Instruction</th>
+								<th class="col-8">Description</th>
+							</tr>
+							<tr class="d-flex">
+								<td class="table-secondary text-left col-4"><pre>mov eax, 5
+mul 3</pre></td>
+								<td class="col-8"><p>Moves 5 into eax. Multiplies what is in eax by 3. Result is 15 in eax.</p></td>
+							</tr>
+							<tr class="d-flex">
+								<td class="table-secondary text-left col-4"><pre>mul eax</pre></td>
+								<td class="col-8"><p>Squares eax and assigns the result into eax.</p></td>
+							</tr>
+						</tbody>
+					</table>
+					<br />
+					<table class="table table-hover" style="text-align:center; margin:auto;">
+						<thead class="thead-dark"><tr><th colspan="2">"imul" Examples: Multiplies two Signed numbers</th></tr></thead>
+						<tbody>
+							<tr class="d-flex">
+								<th class="col-4">Instruction</th>
+								<th class="col-8">Description</th>
+							</tr>
+							<tr class="d-flex">
+								<td class="table-secondary text-left col-4"><pre>mov eax, 5
+imul -3</pre></td>
+								<td class="col-8"><p>Moves 5 into eax. Multiplies what is in eax by -3. Result is -15 in eax.</p></td>
+							</tr>
+							<tr class="d-flex">
+								<td class="table-secondary text-left col-4"><pre>imul eax</pre></td>
+								<td class="col-8"><p>Squares eax and assigns the result into eax.</p></td>
+							</tr>
+							<tr class="d-flex">
+								<td class="table-secondary text-left col-4"><pre>imul 5</pre></td>
+								<td class="col-8"><p>Multiplies eax by 5 and assigns the result into eax.</p></td>
+							</tr>
+							<tr class="d-flex">
+								<td class="table-secondary text-left col-4"><pre>imul ebx, 5</pre></td>
+								<td class="col-8"><p>Multiplies ebx by 5 and assigns the result into ebx.</p></td>
+							</tr>
+							<tr class="d-flex">
+								<td class="table-secondary text-left col-4"><pre>imul eax, ebx, 5</pre></td>
+								<td class="col-8"><p>Multiplies ebx by 5 and assigns the result into eax.</p></td>
+							</tr>
+						</tbody>
+					</table>
+					<br />
+					<table class="table table-hover" style="text-align:center; margin:auto;">
+						<thead class="thead-dark">
+							<tr>
+								<th colspan="2">"neg" Examples: Takes Two's Compliment of a number (Maintains flags)</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr class="d-flex">
+								<th class="col-4">Instruction</th>
+								<th class="col-8">Description</th>
+							</tr>
+							<tr class="d-flex">
+								<td class="table-secondary text-left col-4"><pre>neg eax</pre></td>
+								<td class="col-8"><p>Replaces eax, with eax's two's compliment</p></td>
+							</tr>
+						</tbody>
+					</table>
+					<br />
+					<table class="table table-hover" style="text-align:center; margin:auto;">
+						<thead class="thead-dark">
+							<tr>
+								<th colspan="2">"inc" Examples: Adds one to destination</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr class="d-flex">
+								<th class="col-4">Instruction</th>
+								<th class="col-8">Description</th>
+							</tr>
+							<tr class="d-flex">
+								<td class="col-4 table-secondary text-left"><pre>inc eax</pre></td>
+								<td class="col-8"><p>Adds 1 to eax, and assigns the result to eax</p></td>
+							</tr>
+						</tbody>
+					</table>
+					<br />
+					<table class="table table-hover" style="text-align:center; margin:auto;">
+						<thead class="thead-dark">
+							<tr>
+								<th colspan="2">"dec" Examples: Subtracts one to destination</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr class="d-flex">
+								<th class="col-4">Instruction</th>
+								<th class="col-8">Description</th>
+							</tr>
+							<tr class="d-flex">
+								<td class="table-secondary text-left col-4"><pre>dec eax</pre></td>
+								<td class="col-8"><p>Subtracts 1 from eax, and assigns the result to eax</p></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 	</body>
 </html>
