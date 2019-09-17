@@ -1,35 +1,77 @@
 <html>
+	<head>
+		<title>Assembly Studying</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		<style>
+		@media (max-width: 576px) { 
+			.add {
+				margin-top: 1em;
+			}
+		}
+		.card {
+			margin-bottom: 1em;
+		}
+		.v-auto {
+			margin-top: auto;
+			margin-bottom: auto;
+		}
+		</style>
+	</head>
 	<body>
-		<h1>Assembly Studying</h1>
-		<h3>If I have missed anything, you find an error and/or typo, or something needs clarity, Discord: @GT#1681</h3>
-		<h2>Descriptions</h2>
-		<ul style="list-style-type:none">
-		<li><a href="Instructions.html">Instructions</a></li>
-		<li><a href="Flags.html">Flags</a></li>
-		<li><a href="Horners.html">Horners Algorithm</a></li>
-		<li><a href="Registers.html">Registers</a></li>
-		<li><a href="Other.html">Other Vocab</a></li>
-		</ul>
-		<h2>Conversions</h2>
-		<ul style="list-style-type:none">
-		<li><a href="DToH.html">Decimal To Hex Questions</a></li>
-		<li><a href="HToD.html">Hex To Decimal Questions</a></li>
-		<li><a href="HToB.html">Hex To Binary Questions</a></li>
-		<li><a href="BToH.html">Binary To Hex Questions</a></li>
-		<li><a href="DToB.html">Decimal To Binary Questions</a></li>
-		<li><a href="BToD.html">Binary To Decimal Questions</a></li>
-		</ul>
-		<h2>Ranges</h2>
-		<ul style="list-style-type:none">
-		<li><a href="RangeUnsigned.html">Unsigned Questions</a></li>
-		<li><a href="RangeSigned.html">Signed Questions</a></li>
-		</ul>
-		<h2>Math</h2>
-		<ul style="list-style-type:none">
-		<li><a href="HexAdd.html">Hex Addition Questions</a></li>
-		<li><a href="HexSub.html">Hex Subtraction Questions</a></li>
-		<li><a href="HexMul.html">Hex Multiplication Questions</a></li>
-		<li><a href="TwoCompliment.html">Hex Two's Compliment Questions</a></li>
-		</ul>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-sm-1 v-auto">
+					<a href="../" class="btn btn-warning btn-block add">Go Back</a>
+				</div>	
+				<div class="col-md-11">
+					<h1>Assembly Studying</h1>
+					<h6>If I have missed anything, you find an error and/or typo, or something needs clarity, Discord: @GT#1681</h6>
+					
+				</div>	
+				<div class="col-sm-4">
+				<div class="card text-center">
+				<div class="card-body">
+					<h2 class="card-title">Descriptions</h2>
+					<a href="Instructions.html" class="btn btn-success btn-block">Instructions</a>
+					<a href="Flags.html" class="btn btn-success btn-block">Flags</a>
+					<a href="Horners.html" class="btn btn-success btn-block">Horners Algorithm</a>
+					<a href="Registers.html" class="btn btn-success btn-block">Registers</a>
+					<a href="Other.html" class="btn btn-success btn-block">Other Vocab</a>
+				</div></div>
+				</div>
+				<div class="col-sm-4">
+				<div class="card text-center">
+				<div class="card-body">
+					<h2 class="card-title">Conversions</h2>
+					<a href="DToH.html" class="btn btn-success btn-block">Decimal To Hex Questions</a>
+					<a href="HToD.html" class="btn btn-success btn-block">Hex To Decimal Questions</a>
+					<a href="HToB.html" class="btn btn-success btn-block">Hex To Binary Questions</a>
+					<a href="BToH.html" class="btn btn-success btn-block">Binary To Hex Questions</a>
+					<a href="DToB.html" class="btn btn-success btn-block">Decimal To Binary Questions</a>
+					<a href="BToD.html" class="btn btn-success btn-block">Binary To Decimal Questions</a>
+					</div></div>
+				</div>	
+				<div class="col-sm-4">
+				<div class="card text-center">
+				<div class="card-body">
+					<h2 class="card-title">Ranges</h2>
+					<a href="RangeUnsigned.html" class="btn btn-success btn-block">Unsigned Questions</a>
+					<a href="RangeSigned.html" class="btn btn-success btn-block">Signed Questions</a>
+					</div></div>
+				<div class="card text-center">
+				<div class="card-body">
+					<h2 class="card-title">Math</h2>
+					<a href="HexAdd.html" class="btn btn-success btn-block">Hex Addition Questions</a>
+					<a href="HexSub.html" class="btn btn-success btn-block">Hex Subtraction Questions</a>
+					<a href="HexMul.html" class="btn btn-success btn-block">Hex Multiplication Questions</a>
+					<a href="TwoCompliment.html" class="btn btn-success btn-block">Hex Two's Compliment Questions</a>
+				</div></div>
+				</div>		
+			</div>
+		</div>
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 	</body>
 </html>
