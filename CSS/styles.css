@@ -26,6 +26,20 @@
 .set14 td:nth-child(2){
 	-ms-flex:0 0 66.666666%;flex:0 0 66.666666%;max-width:66.666666%;
 }
+.set-code th:nth-child(1){
+	white-space: pre;unicode-bidi: embed;
+}
+.set-code th:nth-child(2){
+	white-space: pre;unicode-bidi: embed;
+}
+.set-code td:nth-child(1){
+	white-space: pre;unicode-bidi: embed;
+	background-color:#d6d8db;
+	color: #212529;
+}
+.set-code td:nth-child(2){
+	white-space: pre;unicode-bidi: embed;
+}
 .set14 tr{
 	display:-ms-flexbox!important;display:flex!important;
 }
