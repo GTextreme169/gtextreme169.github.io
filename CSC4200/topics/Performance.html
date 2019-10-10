@@ -1,6 +1,6 @@
 <html>
 	<head>
-		<title>Template.html</title>
+		<title>Performance</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" type="text/css" href="https://gtextreme169.github.io/CSS/bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" href="https://gtextreme169.github.io/CSS/styles.css" />
@@ -16,24 +16,74 @@
 					<a href="../index.html" class="btn btn-warning col-4" style="font-size:24px"><i class="fa fa-home"></i></a>
 				</div>
 				<div class="col-md-8">
-					<h1>Template.html</h1>
+					<h1>Performance</h1>
 				</div>
 				<div class="col-sm-2 v-auto">
-					<a href="Packets.html" class="btn btn-warning btn-block add">Next</a>
+					<a href="BandwidthDelay.html" class="btn btn-warning btn-block add">Next</a>
 				</div>
 			</div>
 			<div class="row justify-content-center">
 				<div class="col-sm-8">
 					<div class="card text-center border-dark">
-						<h4 class="card-header">Template</h4>
+						<h4 class="card-header">Bandwidth</h4>
 						<div class="card-body">
-							<p>Information</p>
+							<p>The size of the network pipe. Measured in bps.</p>
+						</div>
+					</div>
+					<div class="card text-center border-dark">
+						<h4 class="card-header">Jitter</h4>
+						<div class="card-body">
+							<p>Also called Interpacket gap</p>
+							<p>Time Between packets. Packets don't flow at in perfect sync.</p>
+						</div>
+					</div>
+					<div class="card text-center border-dark">
+						<h4 class="card-header">Round Trip Time (RTT)</h4>
+						<div class="card-body">
+							<p>Time for a packet to be sent from sender, to receiver, then back.</p>
+						</div>
+					</div>
+					<div class="card text-center border-dark">
+						<h4 class="card-header">Propagation Delay</h4>
+						<div class="card-body">
+							<p>The Delay of the first bit from the sender to the receiver.</p>
+						</div>
+					</div>
+					<div class="card text-center border-dark">
+						<h4 class="card-header">Transmission Delay</h4>
+						<div class="card-body">
+							<p>The Delay for the transmission of all the data from sender to the receiver.</p>
+						</div>
+					</div>
+					<div class="card text-center border-dark">
+						<h4 class="card-header">Queuing Delay</h4>
+						<div class="card-body">
+							<p>The Delay of enqueuing and dequeuing the packets during statistical multiplexing.</p>
+						</div>
+					</div>
+					<div class="card text-center border-dark">
+						<h4 class="card-header">Latency</h4>
+						<div class="card-body">
+							<p>Delay in sending packets. Measured in ms.</p>
+							<p>Equation: Latency = Propagation Delay + transmission Delay + Queuing Delay</p>
+						</div>
+					</div>
+					<div class="card text-center border-dark">
+						<h4 class="card-header">Full Equation</h4>
+						<div class="card-body">
+							<p>Delay = Handshake + Transmission + Propagation + Queuing</p>
+						</div>
+					</div>
+					<div class="card text-center border-dark">
+						<h4 class="card-header">Example Problem</h4>
+						<div class="card-body">
+							<p>Lecture 2 Slide 14</p>
 						</div>
 					</div>
 					<div class="card text-center border-dark">
 						<h4 class="card-header">Continue Reading</h4>
 						<div class="card-body">
-							<a href="Packets.html" class="btn btn-success btn-block">What is a Packet?</a>
+							<a href="BandwidthDelay.html" class="btn btn-success btn-block">Bandwidth x Delay</a>
 						</div>
 					</div>
 				</div>	

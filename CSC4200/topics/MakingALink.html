@@ -1,6 +1,6 @@
 <html>
 	<head>
-		<title>Template.html</title>
+		<title>Making A Link</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" type="text/css" href="https://gtextreme169.github.io/CSS/bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" href="https://gtextreme169.github.io/CSS/styles.css" />
@@ -16,24 +16,48 @@
 					<a href="../index.html" class="btn btn-warning col-4" style="font-size:24px"><i class="fa fa-home"></i></a>
 				</div>
 				<div class="col-md-8">
-					<h1>Template.html</h1>
+					<h1>Making a Link</h1>
 				</div>
 				<div class="col-sm-2 v-auto">
-					<a href="Packets.html" class="btn btn-warning btn-block add">Next</a>
+					<a href="Frames.html" class="btn btn-warning btn-block add">Next</a>
 				</div>
 			</div>
 			<div class="row justify-content-center">
 				<div class="col-sm-8">
 					<div class="card text-center border-dark">
-						<h4 class="card-header">Template</h4>
+						<h4 class="card-header">Description</h4>
 						<div class="card-body">
-							<p>Information</p>
+							<p>Transmission requires encoding electrical signals and decoding the signals at the destination.</p>
+						</div>
+					</div>
+					<div class="card text-center border-dark">
+						<h4 class="card-header">NRZ</h4>
+						<div class="card-body">
+							<p>0 is Low and 1 is High. Simple, but too many consecutive of the same values may introduce baseline wander.</p>
+						</div>
+					</div>
+					<div class="card text-center border-dark">
+						<h4 class="card-header">Baseline Wander</h4>
+						<div class="card-body">
+							<p>The average value is used to determine if an electrical signal is a high or low value. Too many of one value or the other will adjust a bias into the average. This bias is Baseline wander.</p>
+						</div>
+					</div>
+					<div class="card text-center border-dark">
+						<h4 class="card-header">NRZI</h4>
+						<div class="card-body">
+							<p>At a 1 Transition flip current bit and hold it. Do nothing at zero.</p>
+						</div>
+					</div>
+					<div class="card text-center border-dark">
+						<h4 class="card-header">Manchester Encoding</h4>
+						<div class="card-body">
+							<p><a href="https://en.wikipedia.org/wiki/XOR_gate#targetText=XOR%20gate%20(sometimes%20EOR%2C%20or,to%20the%20gate%20is%20true.">XOR (Exclusive OR)</a> of the system clock and the NRZ data</p>
 						</div>
 					</div>
 					<div class="card text-center border-dark">
 						<h4 class="card-header">Continue Reading</h4>
 						<div class="card-body">
-							<a href="Packets.html" class="btn btn-success btn-block">What is a Packet?</a>
+							<a href="Frames.html" class="btn btn-success btn-block">Frames</a>
 						</div>
 					</div>
 				</div>	
