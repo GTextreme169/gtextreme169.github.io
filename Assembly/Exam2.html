@@ -766,6 +766,12 @@ procName PROC
                                 </td>
                                 <td><p>Full Example of a Procedure Definition.</p></td>
                             </tr>
+                            <tr>
+                                <td class="table-secondary text-left">
+                                    <pre>EXTERN procName:PROC</pre>
+                                </td>
+                                <td><p>Expose the PROC for other asm files to use.</p></td>
+                            </tr>
                         </tbody>
                     </table>
                     <br />
@@ -807,6 +813,37 @@ mov ebx, [eax]
 </pre>
                                 </td>
                                 <td><p>Moves the value of variableName into ebx.</p></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                    <table class="table table-hover" style="text-align:center; margin:auto;" border=1>
+                        <thead class="thead-dark">
+                            <tr>
+                                <th colspan="2">Macros</th>
+                            </tr>
+                        </thead>
+                        <tbody class="set14">
+                            <tr>
+                                <th>Instruction</th>
+                                <th>Description</th>
+                            </tr>
+                            <tr>
+                                <td class="table-secondary text-left">
+<pre>nameOfMacro MACRO arg1, arg2, arg3
+    
+    ; Other Code Goes Here
+
+    ENDM
+</pre>
+                                </td>
+                                <td><p>Definition of A Macro with 3 args (you can put as many as you want)</p></td>
+                            </tr>
+                            <tr>
+                                <td class="table-secondary text-left">
+                                    <p>Notes:</p>
+                                </td>
+                                <td><p>Basically A Function. This is pass by reference.</p></td>
                             </tr>
                         </tbody>
                     </table>
