@@ -1,0 +1,207 @@
+<html>
+	<head>
+		<title>List of Exam 2</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="https://gtextreme169.github.io/CSS/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="https://gtextreme169.github.io/CSS/styles.css" />
+	</head>
+	<body style="text-align:center">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-sm-2 v-auto">
+					<a href="index.html" class="btn btn-warning btn-block add">Go Back</a>
+				</div>	
+				<div class="col-md-8">
+					<h1>List of Exam 2 information</h1>
+					<h2>Warning: This page is temporary!</h2>
+					<h2>Ensure to use the iLearn material as well!</h2>
+				</div>
+			</div>
+			<div class="row justify-content-center">
+				<div class="col-sm-6">
+                    <hr />
+                    <h3>Lecture 10</h3>
+					<table class="table table-hover" style="text-align:center; margin:auto;" border=1>
+						<thead class="thead-dark">
+							<tr>
+								<th colspan="2">Moving Smaller Data Types to Larger Ones</th>
+							</tr>
+						</thead>
+						<tbody class="set14">
+							<tr>
+								<th>Instruction</th>
+								<th>Description</th>
+							</tr>
+							<tr>
+								<td class="table-secondary text-left"><pre>movsz eax, bx</pre></td>
+								<td class="col-8"><p>Use this for unsigned values(only positive).Assigns the value in bx, to eax by adding all zeros in the additional 2 byte space ahead of bx. The Z is for zero.</p><p>A way to replicate this is by moving 0 to the larger destination register first, then moving the value to the smaller version of the destination register.</p></td>
+							</tr>
+							<tr>
+								<td class="table-secondary text-left"><pre>movsx eax, bx</pre></td>
+								<td><p>Use this for signed values(positive or negative). Assigns the value in bx, to eax.</p></td>
+							</tr>
+						</tbody>
+					</table>
+					<br />
+					<table class="table table-hover" style="text-align:center; margin:auto;" border=1>
+						<thead class="thead-dark">
+							<tr>
+								<th colspan="2">"div" Examples: Unsigned Division Operator</th>
+							</tr>
+						</thead>
+						<tbody class="set14">
+							<tr>
+								<th>Instruction</th>
+								<th>Description</th>
+							</tr>
+							<tr>
+								<td class="table-secondary text-left">
+<pre>mov ax, 13
+mov bl, 3
+div bl</pre>
+                                </td>
+								<td><p>8 bit Unsigned Division. Divides 13 by 3. The result will be stored in AL (4), the remainder will be stored in AH (1).</p><p>Note: AX has to be assigned, you cannot use a different register for the dividend.</p></td>
+                            </tr>
+                            <tr>
+                                <td class="table-secondary text-left">
+<pre>mov dx, 0
+mov ax, 13
+mov cx, 3
+div cx</pre>
+                                </td>
+                                <td><p>16 bit Unsigned Division. Divides 13 by 3. The result will be stored in AX (4), the remainder will be stored in DX (1).</p><p>Note: DX and AX have to be assigned, you cannot use different registers for the dividend.</p></td>
+                            </tr>
+                            <tr>
+                                <td class="table-secondary text-left">
+<pre>mov edx, 0
+mov eax, 13
+mov ecx, 3
+div ecx</pre>
+                                </td>
+                                <td><p>32 bit Unsigned Division. Divides 13 by 3. The result will be stored in EAX (4), the remainder will be stored in EDX (1).</p><p>Note: EDX and EAX have to be assigned, you cannot use different registers for the dividend.</p></td>
+                            </tr>
+						</tbody>
+                    </table>
+                    
+                    <hr />
+                    <h3>Lecture 11</h3>
+                    <table class="table table-hover" style="text-align:center; margin:auto;" border=1>
+                        <thead class="thead-dark">
+                            <tr>
+                                <th colspan="2">Signed Extension Instructions</th>
+                            </tr>
+                        </thead>
+                        <tbody class="set14">
+                            <tr>
+                                <th>Instruction</th>
+                                <th>Description</th>
+                            </tr>
+                            <tr>
+                                <td class="table-secondary text-left">
+<pre>.data 
+byteVal SBYTE -101  ; 9Bh
+
+.code
+mov al, byteVal     ; AL = 9Bh
+cbw                 ; AX = FF9Bh</pre>
+                                </td>
+                                <td><p>CBW means convert byte to word. </p><p>CBW converts signed value in AL, and stores the result in AX</p></td>
+                            </tr>
+                            <tr>
+                                <td class="table-secondary text-left">
+<pre>.data 
+wordVal SWORD -101  ; FF9Bh
+
+.code
+mov ax, wordVal     ; AX = FF9Bh
+cwd                 ; DX = FFFFh
+                    ; AX = FF9Bh</pre>
+                                </td>
+                                <td><p>CWD means convert word to double word. </p><p>CWD converts signed value in AX, and stores the result in DX and AX</p></td>
+                            </tr>
+                            <tr>
+                                <td class="table-secondary text-left">
+<pre>.data 
+dwordVal SDWORD -101  ; FFFFFF9Bh
+
+.code
+mov eax, dwordVal
+cdq             ; EDX = FFFFFFFFh
+                ; EAX = FFFFFF9Bh</pre>
+                                </td>
+                                <td><p>CDQ means convert double word to quad word. </p><p>CDQ converts signed value in EAX, and stores the result in EDX and EAX</p></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                    <table class="table table-hover" style="text-align:center; margin:auto;" border=1>
+                        <thead class="thead-dark">
+                            <tr>
+                                <th colspan="2">"idiv" Examples: Signed Division Operator</th>
+                            </tr>
+                        </thead>
+                        <tbody class="set14">
+                            <tr>
+                                <th>Instruction</th>
+                                <th>Description</th>
+                            </tr>
+                            <tr>
+                                <td class="table-secondary text-left">
+<pre>mov ax, 13
+mov bl, 3
+idiv bl</pre>
+                                </td>
+                                <td><p>8 bit Signed Division. Divides 13 by 3. The result will be stored in AL (4), the remainder will be stored in AH (1).</p><p>Note: AX has to be assigned, you cannot use a different register for the dividend.</p></td>
+                            </tr>
+                            <tr>
+                                <td class="table-secondary text-left">
+<pre>mov dx, 0
+mov ax, 13
+mov cx, 3
+idiv cx</pre>
+                                </td>
+                                <td><p>16 bit Signed Division. Divides 13 by 3. The result will be stored in AX (4), the remainder will be stored in DX (1).</p><p>Note: DX and AX have to be assigned, you cannot use different registers for the dividend.</p></td>
+                            </tr>
+                            <tr>
+                                <td class="table-secondary text-left">
+<pre>mov edx, 0
+mov eax, 13
+mov ecx, 3
+idiv ecx</pre>
+                                </td>
+                                <td><p>32 bit Signed Division. Divides 13 by 3. The result will be stored in EAX (4), the remainder will be stored in EDX (1).</p><p>Note: EDX and EAX have to be assigned, you cannot use different registers for the dividend.</p></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                
+                    <br />
+                    <table class="table table-hover" style="text-align:center; margin:auto;" border=1>
+                        <thead class="thead-dark">
+                            <tr>
+                                <th colspan="2">Division Operator Notes</th>
+                            </tr>
+                        </thead>
+                        <tbody class="set22">
+                            <tr>
+                                <th>Problem</th>
+                                <th>Solution</th>
+                            </tr>
+                            <tr>
+                                <td><p>If the result wont fit inside the destination operand, the program will crash.</p></td>
+                                <td><p>Store the operands in larger registers (if possible).</p></td>
+                            </tr>
+                            <tr>
+                                <td><p>Dividing by zero</p></td>
+                                <td><p>Compare (cmp) the divisor against zero and jump if equal to (je) past the division to prevent program crashing.</p></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+				</div>
+			</div>
+		</div>
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	</body>
+</html>
