@@ -306,35 +306,35 @@ L1:
                             </tr>
                             <tr>
                                 <td><p>ja</p></td>
-                                <td><p></p></td>
+                                <td><p>Jump if Above. Carry Flag Equals 0 and Zero Flag Equals 0.</p></td>
                             </tr>
                             <tr>
                                 <td><p>jnbe</p></td>
-                                <td><p></p></td>
+                                <td><p>Jump if NOT Below or Equal.</p></td>
                             </tr>
                             <tr>
                                 <td><p>jae</p></td>
-                                <td><p></p></td>
+                                <td><p>Jump if Above or Equal.</p></td>
                             </tr>
                             <tr>
                                 <td><p>jnb</p></td>
-                                <td><p></p></td>
+                                <td><p>Jump if NOT Below.</p></td>
                             </tr>
                             <tr>
                                 <td><p>jb</p></td>
-                                <td><p></p></td>
+                                <td><p>Jump if Below. Carry Flag Equals 0.</p></td>
                             </tr>
                             <tr>
                                 <td><p>jnae</p></td>
-                                <td><p></p></td>
+                                <td><p>Jump if NOT Above or Equal.</p></td>
                             </tr>
                             <tr>
                                 <td><p>jbe</p></td>
-                                <td><p></p></td>
+                                <td><p>Jump if Below or Equal.</p></td>
                             </tr>
                             <tr>
                                 <td><p>jna</p></td>
-                                <td><p></p></td>
+                                <td><p>Jump if NOT Above.</p></td>
                             </tr>
                         </tbody>
                     </table>
@@ -352,31 +352,112 @@ L1:
                             </tr>
                             <tr>
                                 <td><p>je</p></td>
-                                <td><p></p></td>
+                                <td><p>Jump if Equal. Zero Flag Equals 1.</p></td>
                             </tr>
                             <tr>
                                 <td><p>jz</p></td>
-                                <td><p></p></td>
+                                <td><p>Jump if Zero.</p></td>
                             </tr>
                             <tr>
                                 <td><p>jne</p></td>
-                                <td><p></p></td>
+                                <td><p>Jump if NOT Equal. Zero Flag Equals 0.</p></td>
                             </tr>
                             <tr>
                                 <td><p>jnz</p></td>
-                                <td><p></p></td>
+                                <td><p>Jump if NOT Zero.</p></td>
                             </tr>
                             <tr>
                                 <td><p>js</p></td>
-                                <td><p></p></td>
+                                <td><p>Jump if Sign. Signed Flag Equals 1.</p></td>
                             </tr>
                             <tr>
                                 <td><p>jc</p></td>
-                                <td><p></p></td>
+                                <td><p>Jump if Carry. Carry Flag Equals 1.</p></td>
                             </tr>
                             <tr>
                                 <td><p>jo</p></td>
-                                <td><p></p></td>
+                                <td><p>Jump if Overflow. Overflow Equals 1.</p></td>
+                            </tr>
+                            <tr>
+                                <td><p>jeaxz</p></td>
+                                <td><p>Jump if value in EAX is Zero.</p></td>
+                            </tr>
+                            <tr>
+                                <td><p>Note:</p></td>
+                                <td><p>Many Others Exist. Ex. jns, jnc, jno</p></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                    <table class="table table-hover" style="text-align:center; margin:auto;" border=1>
+                        <thead class="thead-dark">
+                            <tr>
+                                <th colspan="2">Loops</th>
+                            </tr>
+                        </thead>
+                        <tbody class="set14">
+                            <tr>
+                                <th>Instruction</th>
+                                <th>Description</th>
+                            </tr>
+                            <tr>
+                                <td class="table-secondary text-left">
+<pre>mov ecx, 0
+
+L1: 
+    cmp ecx, 10
+    je EndL1
+
+    ; Other Code Goes Here
+
+    inc ecx
+    jmp L1
+EndL1:
+    </pre>
+                                </td>
+                                <td><p>While Loop. Always Jump at the End, and Compare at the begining.</p></td>
+                            </tr>
+                            <tr>
+                                <td class="table-secondary text-left">
+<pre>mov ecx, 10
+
+L1: 
+        
+    ; Other Code Here
+
+    loop L1</pre>
+                                </td>
+                                <td><p>Loop instruction. This will jump to L1 until ecx is equal to zero. This will auto decrement ecx each time it is called.</p></td>
+                            </tr>
+                            <tr>
+                                <td class="table-secondary text-left">
+<pre>mov ecx, 10
+
+L1: 
+        
+    ; Other Code Here
+
+    loop L1</pre>
+                                </td>
+                                <td><p>For Loop. Use the loop Operator. ECX stores the current iteration (from upper bound to lower). See Loop Instruction For Details.</p></td>
+                            </tr>
+                            <tr>
+                                <td class="table-secondary text-left">
+<pre>mov eax, 0
+
+L1: 
+    
+    ; Other Code Goes Here
+
+    inc eax
+    cmp eax, 10
+    jb L1</pre>
+                                </td>
+                                <td><p>(Do while) Until Loop. Dont Compare for Jump Till the End.</p></td>
+                            </tr>
+                            <tr>
+                                <td><p>Note:</p></td>
+                                <td><p>ecx is used in loops by several operators. jecxz can be used to prevent infinite loops if ecx were to reach 0.</p></td>
                             </tr>
                         </tbody>
                     </table>
