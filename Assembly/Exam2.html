@@ -662,11 +662,12 @@ push dx ; Two Bytes</pre>
                                             <li>10h </li>
                                     </ul>
                                 </td>
-                                <td><p>Stack after three pushes. Of Size 8. The compiler should throw errors if you attempt to pop off the wrong size variable.</p></td>
+                                <td><p>Stack after four pushes. Of Size 8. The compiler should throw errors if you attempt to pop off the wrong size variable.</p></td>
                             </tr>
                         </tbody>
                     </table>
                     <br />
+                    
                     <table class="table table-hover" style="text-align:center; margin:auto;" border=1>
                         <thead class="thead-dark">
                             <tr>
@@ -818,7 +819,8 @@ procName PROC
 procName PROC
     push ebp ; Protect Stack Frame
     mov ebp, esp ; Protects Local Variables
-    
+    sub esp, 0 ; Replace 0 with the number of bytes for localVars
+
     ; Other Register Pushes Go Here
 
     pushfd
@@ -870,6 +872,12 @@ procName PROC
                             </tr>
                             <tr>
                                 <td class="table-secondary text-left">
+                                    <pre>mov eax, OFFSET variableName</pre>
+                                </td>
+                                <td><p>This is 1 CPU Cycle Faster! Moves the Memory Address of variableName into eax</p></td>
+                            </tr>
+                            <tr>
+                                <td class="table-secondary text-left">
                                     <pre>mov [eax], 10</pre>
                                 </td>
                                 <td><p>Moves the value 10 into the variable whose address is in eax.</p></td>
@@ -889,6 +897,55 @@ mov ebx, [eax]
 </pre>
                                 </td>
                                 <td><p>Moves the value of variableName into ebx.</p></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                    <table class="table table-hover" style="text-align:center; margin:auto;" border=1>
+                        <thead class="thead-dark">
+                            <tr>
+                                <th colspan="2">Local Variable Operations</th>
+                            </tr>
+                        </thead>
+                        <tbody class="set14">
+                            <tr>
+                                <th>Instruction</th>
+                                <th>Description</th>
+                            </tr>
+            
+                            <tr>
+                                <td>
+                                <p>Notes:</p>
+                                </td>
+                                <td><p>Starts at [ebp-4], then decrement by the size of the required variable. This is the opposite of the push/pop allocations.</p><p>Make Sure to move esi past the end of the lowest LocalVariable to prevent overwriting them.</p></td>
+                            </tr>               
+                            <tr>
+                                <td class="table-secondary text-left">
+<pre>.CODE
+procName PROC
+    push ebp ; Protect Stack Frame
+    mov ebp, esp ; Protects Local Variables
+    sub esp, 8 ; Replace 0 with the number of bytes for localVars
+    
+    ; local var 1 is  [ebp-4] size of 4 bytes
+    ; Local Var 2 is  [ebp-8] size of 4 bytes
+
+    ; Other Register Pushes Go Here
+
+    pushfd
+
+    ; Other Code Goes Here
+
+    popfd
+
+    ; Other Register Pops Go Here
+
+    pop ebp ; Restore Stack Frame
+    ret
+    procName ENDP
+</pre>
+                                </td>
+                                <td><p>Example 1: ESP is decremented by 8, allowing 8 bytes to be safe.</p></td>
                             </tr>
                         </tbody>
                     </table>
