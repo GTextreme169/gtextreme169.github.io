@@ -462,6 +462,56 @@ L1:
                         </tbody>
                     </table>
                     <br />
+                    <table class="table table-hover" style="text-align:center; margin:auto;" border=1>
+                        <thead class="thead-dark">
+                            <tr>
+                                <th colspan="2">Arrays</th>
+                            </tr>
+                        </thead>
+                        <tbody class="set14">
+                            <tr>
+                                <th>Instruction</th>
+                                <th>Description</th>
+                            </tr>
+                            <tr>
+                                <td class="table-secondary text-left">
+                                    <pre>arrayName DWORD 1, 1, 2, 3, 5, 8, 13, 21</pre>
+                                </td>
+                                <td><p>Array Definition. Length is 8. Values are Fibonacci numbers.</p></td>
+                            </tr>
+                            <tr>
+                                <td class="table-secondary text-left">
+                                    <pre>arrayName DWORD 9 DUP (?)</pre>
+                                </td>
+                                <td><p>Array Definition. Length is 9. Values are essentially null/0</p></td>
+                            </tr>
+                            <tr>
+                                <td class="table-secondary text-left">
+                                    <pre>arrayName DWORD 10 DUP (1)</pre>
+                                </td>
+                                <td><p>Array Definition. Length is 10. Values are all 1</p></td>
+                            </tr>
+                            <tr>
+                                <td class="table-secondary text-left">
+<pre>arrayName DWORD 1, 2, 3, 4, 5
+mov ecx, 3
+mov edx, arrayName[4*ecx] ; Gets 4 bytes at index 3.
+</pre>
+                                </td>
+                                <td><p>The array is Length 5. Gets 4 bytes(the size of edx) at index 3(12 bytes skipped). EDX Will Contain 4</p></td>
+                            </tr>
+                            <tr>
+                                <td class="table-secondary text-left">
+<pre>arrayName WORD 1, 2, 3, 4, 5
+mov cx, 4
+mov dx, arrayName[2*cx] ; Gets 4 bytes at index 4.
+</pre>
+                                </td>
+                                <td><p>The array is Length 5. Gets 2 bytes(the size of dx) at index 4(8 bytes skipped). DX Will Contain 5</p></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
 				</div>
 			</div>
 		</div>
