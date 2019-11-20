@@ -512,6 +512,302 @@ mov dx, arrayName[2*cx] ; Gets 4 bytes at index 4.
                         </tbody>
                     </table>
                     <br />
+                    <table class="table table-hover" style="text-align:center; margin:auto;" border=1>
+                        <thead class="thead-dark">
+                            <tr>
+                                <th colspan="2">Basic Stack Operations</th>
+                            </tr>
+                        </thead>
+                        <tbody class="set14">
+                            <tr>
+                                <th>Instruction</th>
+                                <th>Description</th>
+                            </tr>
+                            <tr>
+                                <td class="table-secondary text-left">
+                                    <pre>push eax</pre>
+                                </td>
+                                <td><p>Pushes value of EAX onto the stack. (Works with WORD and DWORD)</p></td>
+                            </tr>
+                            <tr>
+                                <td class="table-secondary text-left">
+                                    <pre>pushd eax</pre>
+                                </td>
+                                <td><p>Pushes value of EAX onto the stack. (Works with DWORD)</p></td>
+                            </tr>
+                                    <pre>pushw ax</pre>
+                                </td>
+                                <td><p>Pushes value of AX onto the stack. (Works with WORD)</p></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                <p>Notes For Pushing:</p>
+                                </td>
+                                <td><p>Each Push Decrements ESP by the size of the object pushed. The Object is inserted at ESP after ESP has been moved. Flags are not changed.</p></td>
+                            </tr>
+                            <tr>
+                                <td class="table-secondary text-left">
+                                    <pre>pop eax</pre>
+                                </td>
+                                <td><p>Pops the Value off of the stack and stores it in EAX. (Works with WORD and DWORD)</p></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                <p>Notes For Popping:</p>
+                                </td>
+                                <td><p>The Object is copied from stack at ESP to the destination (Size determined by the input size from the related push). Then Pop Increments ESP by the size of the object. Flags are not changed.</p></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                <p>Notes For Stack:</p>
+                                </td>
+                                <td><p>Order Matters!!!!!!!!!! See Examples Below.</p></td>
+                            </tr>                    
+                            <tr>
+                                <td class="table-secondary text-left">
+<pre>push eax
+push edx
+push edi
+
+; Other Code Goes Here
+
+pop edi
+pop edx
+pop eax
+</pre>
+                                </td>
+                                <td><p>Example 1: Order is maintained. EAX, EDX, and EDI Values Are Protected/Restored.</p></td>
+                            </tr>                    
+                            <tr>
+                                <td class="table-secondary text-left">
+<pre>pushad
+pushfd
+
+; Other Code Goes Here
+
+popfd
+popad
+</pre>
+                                </td>
+                                <td><p>Example 2: Order is maintained. All Registers and Flags Are Protected/Restored.</p></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                    <table class="table table-hover" style="text-align:center; margin:auto;" border=1>
+                        <thead class="thead-dark">
+                            <tr>
+                                <th colspan="2">Additional Stack Operations</th>
+                            </tr>
+                        </thead>
+                        <tbody class="set14">
+                            <tr>
+                                <th>Instruction</th>
+                                <th>Description</th>
+                            </tr>
+                            <tr>
+                                <td class="table-secondary text-left">
+                                    <pre>pushad</pre>
+                                </td>
+                                <td><p>Pushes value of All Registers onto the stack.</p></td>
+                            </tr>
+                            <tr>
+                                <td class="table-secondary text-left">
+                                    <pre>pushfd</pre>
+                                </td>
+                                <td><p>Pushes value of EFlagS Register onto the stack.</p></td>
+                            </tr>
+                            <tr>
+                                <td class="table-secondary text-left">
+                                    <pre>popad</pre>
+                                </td>
+                                <td><p>Pops the Values off of the stack and stores the associated registers.</p></td>
+                            </tr>
+                            <tr>
+                                <td class="table-secondary text-left">
+                                    <pre>popfd</pre>
+                                </td>
+                                <td><p>Pops the Value off of the stack and stores the associated registers.</p></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                    <table class="table table-hover" style="text-align:center; margin:auto;" border=1>
+                        <thead class="thead-dark">
+                            <tr>
+                                <th colspan="2">Addressing the Stack</th>
+                            </tr>
+                        </thead>
+                        <tbody class="set14">
+                            <tr>
+                                <th>Instruction</th>
+                                <th>Description</th>
+                            </tr>
+                            <tr>
+                                <td class="table-secondary text-left">
+                                    <pre>mov eax, [ebp + 8]</pre>
+                                </td>
+                                <td><p>Moves the value of the first (latest added) variable into eax.</p></td>
+                            </tr>
+                            <tr>
+                                <td class="table-secondary text-left">
+                                    <pre>mov eax, [ebp + 12]</pre>
+                                </td>
+                                <td><p>Moves the value of the second variable into eax.</p></td>
+                            </tr>
+                            <tr>
+                                <td class="table-secondary text-left">
+                                    <pre>mov ax, [ebp + 10]</pre>
+                                </td>
+                                <td><p>Moves the value of the second variable into ax. Assuming the first and second Values are WORD.</p></td>
+                            </tr>
+                            <tr>
+                                <td class="table-secondary text-left">
+<pre>push ax
+push ebx
+push ecx
+push dx
+[ebp+8] ; dx
+[ebp+10] ; ecx
+[ebp+14] ; ebx
+[ebp+18] ; ax</pre>
+                                </td>
+                                <td><p>Number on the right is calculated with, 8+(Sum of each previous variable's size). </p></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                    <table class="table table-hover" style="text-align:center; margin:auto;" border=1>
+                        <thead class="thead-dark">
+                            <tr>
+                                <th colspan="2">Procedure Operations</th>
+                            </tr>
+                            <tr>
+                                <td colspan="2"><p>Sub-Program. Self Contained. Similar to a Function.</p></td>
+                            </tr>
+                        </thead>
+                        <tbody class="set14">
+                            <tr>
+                                <th>Instruction</th>
+                                <th>Description</th>
+                            </tr>
+                            <tr>
+                                <td class="table-secondary text-left">
+<pre>.CODE
+procName PROC
+    
+    ; Other Code Goes Here
+
+    procName ENDP
+</pre>
+                                </td>
+                                <td><p>Definition of a Procedure</p></td>
+                            </tr>
+                            <tr>
+                                <td class="table-secondary text-left">
+                                    <pre>call procName</pre>
+                                </td>
+                                <td><p>Calling a Previously Defined Procedure</p></td>
+                            </tr>
+                            <tr>
+                                <td class="table-secondary text-left">
+                                    <pre>ret</pre>
+                                </td>
+                                <td><p>Similar to Return. This basically sets the instruction pointers back to previous program.</p></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p>Note:</p>
+                                </td>
+                                <td><p> Push and Pop operations are generally self contained. Do NOT attempt to push values onto the stack to return them. So if you enter the proc with 3 DWORDs in stack, you must exit with at most 3 DWORDs.</p></td>
+                            </tr>
+                            <tr>
+                                <td class="table-secondary text-left">
+                                    <pre>ret n</pre>
+                                </td>
+                                <td><p>Similar to ret. This will pop n bytes off of the stack to ensure stack returning to previous state. This basically sets the instruction pointers back to previous program.</p></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p>Associated Definitions:</p>
+                                </td>
+                                <td><p>Parameters are in the Definition of the Procedure.</p><p>Arguments are sent during a Procedure Call.</p></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p>Note:</p>
+                                </td>
+                                <td><p>Parameters are passed on the stack prior the Procedure Call.</p></td>
+                            </tr>
+                            <tr>
+                                <td class="table-secondary text-left">
+<pre>.CODE
+procName PROC
+    push ebp ; Protect Stack Frame
+    mov ebp, esp ; Protects Local Variables
+    
+    ; Other Register Pushes Go Here
+
+    pushfd
+
+    ; Other Code Goes Here
+
+    popfd
+
+    ; Other Register Pops Go Here
+
+    pop ebp ; Restore Stack Frame
+    ret
+    procName ENDP
+</pre>
+                                </td>
+                                <td><p>Full Example of a Procedure Definition.</p></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                    <table class="table table-hover" style="text-align:center; margin:auto;" border=1>
+                        <thead class="thead-dark">
+                            <tr>
+                                <th colspan="2">Pointer/Address Operations</th>
+                            </tr>
+                        </thead>
+                        <tbody class="set14">
+                            <tr>
+                                <th>Instruction</th>
+                                <th>Description</th>
+                            </tr>
+                            <tr>
+                                <td class="table-secondary text-left">
+                                    <pre>lea eax, variableName</pre>
+                                </td>
+                                <td><p>Moves the Memory Address of variableName into eax</p></td>
+                            </tr>
+                            <tr>
+                                <td class="table-secondary text-left">
+                                    <pre>mov [eax], 10</pre>
+                                </td>
+                                <td><p>Moves the value 10 into the variable whose address is in eax.</p></td>
+                            </tr>
+                            <tr>
+                                <td class="table-secondary text-left">
+<pre>lea eax, variableName
+mov [eax], 10
+</pre>
+                                </td>
+                                <td><p>Moves the value 10 into variableName.</p></td>
+                            </tr>
+                            <tr>
+                                <td class="table-secondary text-left">
+<pre>lea eax, variableName
+mov ebx, [eax]
+</pre>
+                                </td>
+                                <td><p>Moves the value of variableName into ebx.</p></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
 				</div>
 			</div>
 		</div>
