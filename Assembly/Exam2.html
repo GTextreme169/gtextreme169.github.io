@@ -594,6 +594,76 @@ popad
                                 </td>
                                 <td><p>Example 2: Order is maintained. All Registers and Flags Are Protected/Restored.</p></td>
                             </tr>
+                            <tr>
+                                <td class="table-secondary text-left">
+                                    <style>
+                                    .connected li{
+                                        border: 1px solid black
+                                    }
+                                        </style>
+                                    <ul class="connected" style="list-style-type:none">
+                                            <li>_ </li>
+                                            <li>_ </li>
+                                            <li>_ </li>
+                                            <li>_ </li>
+                                            <li>_ </li>
+                                            <li>_ </li>
+                                            <li>_ </li>
+                                            <li>_ </li>
+                                    </ul>
+                                </td>
+                                <td><p>Empty Stack. Of Size 8</p></td>
+                            </tr>
+                            <tr>
+                                <td class="table-secondary text-left">
+                                    <style>
+                                    .connected li{
+                                        border: 1px solid black
+                                    }
+                                        </style>
+<pre><font color="green">push 1h</font> ; One Byte
+<font color="red">push Fh</font> ; One Byte
+mov eax, FFEEDDCCh
+<font color="blue">push eax</font> ; Four Bytes</pre>
+                                    <ul class="connected" style="list-style-type:none">
+                                            <li><font color="green">01h</font></li>
+                                            <li><font color="red">0Fh</font> </li>
+                                            <li><font color="blue">FFh</font></li>
+                                            <li><font color="blue">EEh</font></li>
+                                            <li><font color="blue">DDh</font></li>
+                                            <li><font color="blue">CCh</font></li>
+                                            <li>_ </li>
+                                            <li>_ </li>
+                                    </ul>
+                                </td>
+                                <td><p>Stack after three pushes. Of Size 8. The compiler should throw errors if you attempt to pop off the wrong size variable.</p></td>
+                            </tr>
+                            <tr>
+                                <td class="table-secondary text-left">
+                                    <style>
+                                    .connected li{
+                                        border: 1px solid black
+                                    }
+                                        </style>
+<pre><font color="green">push 1h</font> ; One Byte
+<font color="red">push Fh</font> ; One Byte
+mov eax, FFEEDDCCh
+<font color="blue">push eax</font> ; Four Bytes
+mov dx 110h
+push dx ; Two Bytes</pre>
+                                    <ul class="connected" style="list-style-type:none">
+                                            <li><font color="green">01h</font></li>
+                                            <li><font color="red">0Fh</font> </li>
+                                            <li><font color="blue">FFh</font></li>
+                                            <li><font color="blue">EEh</font></li>
+                                            <li><font color="blue">DDh</font></li>
+                                            <li><font color="blue">CCh</font></li>
+                                            <li>1h </li>
+                                            <li>10h </li>
+                                    </ul>
+                                </td>
+                                <td><p>Stack after three pushes. Of Size 8. The compiler should throw errors if you attempt to pop off the wrong size variable.</p></td>
+                            </tr>
                         </tbody>
                     </table>
                     <br />
@@ -765,6 +835,12 @@ procName PROC
 </pre>
                                 </td>
                                 <td><p>Full Example of a Procedure Definition.</p></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p>Note:</p>
+                                </td>
+                                <td><p>Stack changes during procedure. I recommend looking at Lecture 20 Slide 15 and 16 for Examples.</p></td>
                             </tr>
                             <tr>
                                 <td class="table-secondary text-left">
