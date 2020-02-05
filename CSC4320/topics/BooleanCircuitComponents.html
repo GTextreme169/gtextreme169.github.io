@@ -1,0 +1,379 @@
+<html>
+	<head>
+		<title>Boolean Circuit Components</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="https://gtextreme169.github.io/CSS/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="https://gtextreme169.github.io/CSS/styles.css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+        <style>
+            td {
+                width:33%;
+            }
+        </style>
+    </head>
+	<body style="text-align:center">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-sm-2 v-auto">
+					<button	onclick="window.history.back()" class="btn btn-warning col-6 add">Go Back</button>
+					<a href="../index.html" class="btn btn-warning col-4" style="font-size:24px"><i class="fa fa-home"></i></a>
+				</div>
+				<div class="col-md-8">
+					<h1>Boolean Circuit Components</h1>
+				</div>
+				<div class="col-sm-2 v-auto">
+					<a href="" class="btn btn-warning btn-block add">Next</a>
+				</div>	
+			</div>
+<div class="row justify-content-center"> <!-- Row Start -->
+    <div class="col-8"> <!-- Column Begin -->
+
+        <!-- Buffer -->
+        <div class="card"> <!-- Card Start -->
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-sm-6 col-md-2">
+                        <img class="img-thumbnail mx-auto d-block" src="../images/Buffer.png" alt="https://via.placeholder.com/150">
+                    </div>
+                    <div class="col-sm-6 col-md-6">
+                        <h4 class="card-title">Buffer</h4>
+                        <p class="card-text">This Passes Input through to Output.</p>
+                    </div>
+                    <div class="col-sm-6 col-md-4">
+                        <table class="table table-bordered table-hover">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th>X</th>
+                                    <th>Buffer</th>
+                                </tr>
+                            </thead>
+                        <tr>
+                                <td>0</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>1</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                
+            </div>
+        </div><!-- Card End-->
+
+        <br />
+
+        <!-- Not -->
+        <div class="card"> <!-- Card Start -->
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-sm-6 col-md-2">
+                        <img class="img-thumbnail mx-auto d-block" src="../images/Not.png" alt="https://via.placeholder.com/150">
+                    </div>
+                    <div class="col-sm-6 col-md-6">
+                        <h4 class="card-title">Not</h4>
+                        <p class="card-text">This Takes the Input, Flips it, and Passes it through to Output.</p>
+                    </div>
+                    <div class="col-sm-6 col-md-4">
+                        <table class="table table-bordered table-hover">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th>X</th>
+                                    <th>Not</th>
+                                </tr>
+                            </thead>
+                        <tr>
+                                <td>0</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>0</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                
+            </div>
+        </div><!-- Card End-->
+
+        <br />
+
+        <!-- AND -->
+        <div class="card"> <!-- Card Start -->
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-sm-6 col-md-2">
+                        <img class="img-thumbnail mx-auto d-block" src="../images/And.png" alt="https://via.placeholder.com/150">
+                    </div>
+                    <div class="col-sm-6 col-md-6">
+                        <h4 class="card-title">AND Gate</h4>
+                        <p class="card-text">All Inputs Need to be True for this Gate to Return True.</p>
+                    </div>
+                    <div class="col-sm-6 col-md-4">
+                        <table class="table table-bordered table-hover">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th>X</th>
+                                    <th>Y</th>
+                                    <th>AND</th>
+                                </tr>
+                            </thead>
+                        <tr>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>0</td>
+                                <td>1</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>0</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>1</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                
+            </div>
+        </div><!-- Card End-->
+
+        <br />
+
+        <!-- NAND -->
+        <div class="card"> <!-- Card Start -->
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-sm-6 col-md-2">
+                        <img class="img-thumbnail mx-auto d-block" src="../images/NAND.png" alt="https://via.placeholder.com/150">
+                    </div>
+                    <div class="col-sm-6 col-md-6">
+                        <h4 class="card-title">NAND Gate</h4>
+                        <p class="card-text">This is a AND Gate with a Not After. All Inputs Need to be True for this Gate to Return False.</p>
+                    </div>
+                    <div class="col-sm-6 col-md-4">
+                        <table class="table table-bordered table-hover">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th>X</th>
+                                    <th>Y</th>
+                                    <th>NAND</th>
+                                </tr>
+                            </thead>
+                        <tr>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>0</td>
+                                <td>1</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>0</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>0</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                
+            </div>
+        </div><!-- Card End-->
+
+        <br />
+
+        <!-- OR -->
+        <div class="card"> <!-- Card Start -->
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-sm-6 col-md-2">
+                        <img class="img-thumbnail mx-auto d-block" src="../images/OR.png" alt="https://via.placeholder.com/150">
+                    </div>
+                    <div class="col-sm-6 col-md-6">
+                        <h4 class="card-title">OR Gate</h4>
+                        <p class="card-text">Any True Input Causes this Gate To Be True.</p>
+                    </div>
+                    <div class="col-sm-6 col-md-4">
+                        <table class="table table-bordered table-hover">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th>X</th>
+                                    <th>Y</th>
+                                    <th>OR</th>
+                                </tr>
+                            </thead>
+                        <tr>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>0</td>
+                                <td>1</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>0</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>1</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                
+            </div>
+        </div><!-- Card End-->
+
+        <br />
+
+        <!-- NOR -->
+        <div class="card"> <!-- Card Start -->
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-sm-6 col-md-2">
+                        <img class="img-thumbnail mx-auto d-block" src="../images/NOR.png" alt="https://via.placeholder.com/150">
+                    </div>
+                    <div class="col-sm-6 col-md-6">
+                        <h4 class="card-title">NOR Gate</h4>
+                        <p class="card-text">This is an OR Gate with a Not After. Any True Input Causes this Gate To Be False.</p>
+                    </div>
+                    <div class="col-sm-6 col-md-4">
+                        <table class="table table-bordered table-hover">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th>X</th>
+                                    <th>Y</th>
+                                    <th>NOR</th>
+                                </tr>
+                            </thead>
+                        <tr>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>0</td>
+                                <td>1</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>0</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>0</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                
+            </div>
+        </div><!-- Card End-->
+
+        <br />
+
+        <!-- XOR -->
+        <div class="card"> <!-- Card Start -->
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-sm-6 col-md-2">
+                        <img class="img-thumbnail mx-auto d-block" src="../images/XOR.png" alt="https://via.placeholder.com/150">
+                    </div>
+                    <div class="col-sm-6 col-md-6">
+                        <h4 class="card-title">XOR Gate</h4>
+                        <p class="card-text">True if X and Y are not Equal.</p>
+                    </div>
+                    <div class="col-sm-6 col-md-4">
+                        <table class="table table-bordered table-hover">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th>X</th>
+                                    <th>Y</th>
+                                    <th>XOR</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                </tr>
+                                <tr>
+                                    <td>0</td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>0</td>
+                                    <td>1</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>0</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+            </div>
+        </div><!-- Card End-->
+
+        <br />
+
+        <!-- Traces -->
+        <div class="card"> <!-- Card Start -->
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-sm-6 col-md-2">
+                        <img class="img-thumbnail mx-auto d-block"  src="../images/Point.png" alt="Point">
+                    </div>
+                    <div class="col-sm-6 col-md-2">
+                        <img class="img-thumbnail mx-auto d-block"  src="../images/Hop.png" alt="Hop">
+                    </div>
+                    <div class="col-sm-12 col-md-8">
+                        <h4 class="card-title">Traces</h4>
+                        <p class="card-text">Put A Dot in traces that Intersect AND Connect. Put a Hop in Traces that Intersect BUT DO NOT Connect.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div><!-- Card End-->
+
+        <br />
+    </div>  <!-- Column End --> 
+</div> <!-- Row End -->
+        </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    </body>
+
+</html>
