@@ -1,0 +1,154 @@
+<html>
+	<head>
+		<title>Multiplication</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="https://gtextreme169.github.io/CSS/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="https://gtextreme169.github.io/CSS/styles.css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+        <style>
+            td {
+                width:12.5%;
+            }
+        </style>
+
+    </head>
+	<body style="text-align:center">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-sm-2 v-auto">
+					<button	onclick="window.history.back()" class="btn btn-warning col-6 add">Go Back</button>
+					<a href="../index.html" class="btn btn-warning col-4" style="font-size:24px"><i class="fa fa-home"></i></a>
+				</div>
+				<div class="col-md-8">
+					<h1>Multiplication</h1>
+				</div>
+				<div class="col-sm-2 v-auto">
+					<a href="" class="btn btn-warning btn-block add">Next</a>
+				</div>	
+			</div>
+<div class="row justify-content-center"> <!-- Row Start -->
+    <div class="col-8"> <!-- Column Start -->
+        <!-- Traces -->
+        <div class="card"> <!-- Card Start -->
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h4 class="card-title">Steps</h4>
+                        <ol style="text-align:left">
+                            <li>Write Down Initialize line (First Number in M, Second Number in Q)</li>
+                            <li>Check if the right most bit of Q is a 1 or a zero</li>
+                            <li>If 0, Add Zero To A (5th bit (0) goes into C)</li>
+                            <li>If 1, Add M To A (5th bit goes into C)</li>
+                            <li>Shift C_A_Q right 1 bit (right most bit of Q is dropped)</li>
+                            <li>Repeat Steps 2 through 5 until length you have shifted the same amount of times as there are bits of (M or Q, whichever has more bits).</li>
+                            <li>Your Answer will be AQ (Combined)</li>
+                            <li>Your can check your answer by converting your two starting numbers to decimal and multiplying them.</li>
+                        </ol>
+                    </div>
+                    
+                    <div class="col-sm-12">
+                        <h4>Example 1:</h4>
+                        <p>Solve 1101 * 1011</p>
+                        <table class="table table-bordered table-hover">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th>Step</th>
+                                    <th>C</th>
+                                    <th>A</th>
+                                    <th>Q</th>
+                                    <th>M</th>
+                                    <th>Details</th>
+                                </tr>
+                            </thead>
+                            <tr>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0000</td>
+                                <td>1011</td>
+                                <td>1101</td>
+                                <td>Initialize</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>0</td>
+                                <td>1101</td>
+                                <td>1011</td>
+                                <td>1101</td>
+                                <td>Add M to A (0000 + 1101=01101)</td>
+                            </tr>
+                            <tr>
+                                <td>1.5</td>
+                                <td>0</td>
+                                <td>0110</td>
+                                <td>1101</td>
+                                <td>1101</td>
+                                <td>Shift</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>1</td>
+                                <td>0011</td>
+                                <td>1101</td>
+                                <td>1101</td>
+                                <td>Add M to A (0110 + 1101=10011)</td>
+                            </tr>
+                            <tr>
+                                <td>2.5</td>
+                                <td>0</td>
+                                <td>1001</td>
+                                <td>1110</td>
+                                <td>1101</td>
+                                <td>Shift</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>1001</td>
+                                <td>1110</td>
+                                <td>1101</td>
+                                <td>Add Zero to A (0000 + 1001=01001)</td>
+                            </tr>
+                            <tr>
+                                <td>3.5</td>
+                                <td>0</td>
+                                <td>0100</td>
+                                <td>1111</td>
+                                <td>1101</td>
+                                <td>Shift</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>1</td>
+                                <td>0001</td>
+                                <td>1111</td>
+                                <td>1101</td>
+                                <td>Add M to A (1101 + 0100 = 10001)</td>
+                            </tr>
+                            <tr>
+                                <td>4.5</td>
+                                <td>0</td>
+                                <td>1000</td>
+                                <td>1111</td>
+                                <td>1101</td>
+                                <td>Shift</td>
+                            </tr>
+                        </table>
+                        <p>Your Answer is A_Q which is 10001111b or 143.</p>
+                        <p>Answer Check: 1101b=13, 1011b=11, 13*11=143</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div><!-- Card End-->
+
+        <br />
+    </div>  <!-- Column End --> 
+</div> <!-- Row End -->
+        </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    </body>
+
+</html>
