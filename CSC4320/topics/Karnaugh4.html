@@ -1,56 +1,104 @@
 <html>
-	<head>
-		<title>4 Variable Karnaugh</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" type="text/css" href="https://gtextreme169.github.io/CSS/bootstrap.min.css">
-		<link rel="stylesheet" type="text/css" href="https://gtextreme169.github.io/CSS/styles.css" />
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    
-        <style>
-            td {
-                width:33%;
-            }
-        </style>
-    </head>
-	<body style="text-align:center">
-		<div class="container-fluid">
-			<div class="row">
-				<div class="col-sm-2 v-auto">
-					<button	onclick="window.history.back()" class="btn btn-warning col-6 add">Go Back</button>
-					<a href="../index.html" class="btn btn-warning col-4" style="font-size:24px"><i class="fa fa-home"></i></a>
-				</div>
-				<div class="col-md-8">
-					<h1>4 Variable Karnaugh</h1>
-				</div>
-				<div class="col-sm-2 v-auto">
-					<a href="" class="btn btn-warning btn-block add">Next</a>
-				</div>	
-			</div>
-<div class="row justify-content-center"> <!-- Row Start -->
-    <div class="col-8"> <!-- Column Start -->
-        <!-- Traces -->
-        <div class="card"> <!-- Card Start -->
-            <div class="card-body">
-                <div class="row">
-                    <div class="col-sm-12">
-                        <img class="img-thumbnail mx-auto d-block"  src="../images/Karnaugh4.png" alt="Point">
-                    </div>
-                    <div class="col-sm-12">
-                        <h4 class="card-title">Positions</h4>
-                        <p class="card-text">Outside Variables start on the left, then right, then top, lastly bottom.</p>
-                    </div>
-                </div>
-                
-            </div>
-        </div><!-- Card End-->
+  <head>
+    <title>4 Variable Karnaugh</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://gtextreme169.github.io/CSS/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://gtextreme169.github.io/CSS/styles.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
 
-        <br />
-    </div>  <!-- Column End --> 
-</div> <!-- Row End -->
+    <style>
+      td {
+        width: 33%;
+      }
+    </style>
+  </head>
+  <body style="text-align: center">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-2 v-auto">
+          <button
+            onclick="window.history.back()"
+            class="btn btn-warning col-6 add"
+          >
+            Go Back
+          </button>
+          <a
+            href="../index.html"
+            class="btn btn-warning col-4"
+            style="font-size: 24px"
+            ><i class="fa fa-home"></i
+          ></a>
         </div>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    </body>
+        <div class="col-md-8">
+          <h1>4 Variable Karnaugh</h1>
+        </div>
+        <div class="col-sm-2 v-auto">
+          <a
+            href="multiplicationUnsigned.html"
+            class="btn btn-warning btn-block add"
+            >Next</a
+          >
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <!-- Row Start -->
+        <div class="col-8">
+          <!-- Column Start -->
+          <!-- Traces -->
+          <div class="card">
+            <!-- Card Start -->
+            <div class="card-body">
+              <div class="row">
+                <div class="col-sm-12">
+                  <img
+                    class="img-thumbnail mx-auto d-block"
+                    src="../images/Karnaugh4.png"
+                    alt="Point"
+                  />
+                </div>
+                <div class="col-sm-12">
+                  <h4 class="card-title">Positions</h4>
+                  <p class="card-text">
+                    Outside Variables start on the left, then right, then top,
+                    lastly bottom.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Card End-->
 
+          <br />
+        </div>
+        <!-- Column End -->
+      </div>
+      <!-- Row End -->
+    </div>
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
